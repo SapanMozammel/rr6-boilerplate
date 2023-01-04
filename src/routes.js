@@ -1,8 +1,10 @@
 import Landing from "./components/layout/Landing";
 import Home from "./components/landing/home";
 import About from "./components/landing/about";
-import AboutMe from "./components/landing/about/children/AboutMe";
-import AboutCompany from "./components/landing/about/children/AboutCompany";
+import AboutMe from "./components/landing/about/AboutMe";
+import AboutCompany from "./components/landing/about/AboutCompany";
+import Portfolio from "./components/landing/portfolio";
+import SinglePortfolio from "./components/landing/portfolio/SinglePortfolio";
 
 export const routes = [
   {
@@ -12,7 +14,6 @@ export const routes = [
     children: [
       {
         index: true,
-        // exact: true,
         name: "Home",
         navbar: true,
         element: <Home />,
@@ -44,16 +45,14 @@ export const routes = [
         index: false,
         name: "Portfolio",
         navbar: true,
-        element: <About />,
-        children: [
-          {
-            path: ":id/",
-            index: false,
-            name: "Portfolio Details",
-            element: <AboutCompany />,
-            navbar: false,
-          },
-        ],
+        element: <Portfolio />,
+      },
+      {
+        path: "portfolio/:id",
+        index: false,
+        name: "Single Portfolio",
+        element: <SinglePortfolio />,
+        navbar: false,
       },
     ],
   },

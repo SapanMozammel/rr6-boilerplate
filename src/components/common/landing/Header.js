@@ -1,14 +1,12 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { routes } from "../../../routes";
 
 const Header = () => {
-  const landingLinks = routes.find((navLink) => navLink.layout == "landing");
+  const landingLinks = routes.find((navLink) => navLink.layout === "landing");
   const navLinks = landingLinks?.children?.length
-    ? landingLinks?.children?.filter((navLink) => navLink?.navbar == true)
+    ? landingLinks?.children?.filter((navLink) => navLink?.navbar === true)
     : [];
-
-  const currentPath = useLocation();
 
   return (
     <header className="bg-gray-800">
