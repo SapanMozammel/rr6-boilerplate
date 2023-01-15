@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { routes } from "../../../routes";
 
 const Header = () => {
@@ -14,14 +14,16 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex flex-1 items-stretch justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <img
-                className="h-8 w-auto block"
-                src="https://assets.wpdeveloper.com/2021/10/templately-1.png"
-                alt="Your Company"
-              />
+              <Link to="/">
+                <img
+                  className="h-8 w-auto block"
+                  src="https://assets.wpdeveloper.com/2021/10/templately-1.png"
+                  alt="Your Company"
+                />
+              </Link>
             </div>
             <div className="ml-6 flex w-full">
-              <nav className="flex space-x-4 ml-auto">
+              <nav className="flex items-center space-x-4 ml-auto">
                 {navLinks?.length &&
                   navLinks?.map((navLink) => (
                     <NavLink
@@ -38,6 +40,14 @@ const Header = () => {
                       {navLink?.name}
                     </NavLink>
                   ))}
+                <Link
+                  to="/auth/login"
+                  className="inline-flex items-center justify-center rounded-full border border-transparent bg-teal-600 px-6 h-10 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                >
+                  <span className="inline-flex items-center leading-none">
+                    Login
+                  </span>
+                </Link>
               </nav>
             </div>
           </div>
