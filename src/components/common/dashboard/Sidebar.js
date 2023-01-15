@@ -1,29 +1,15 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import {
-  XMarkIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  FolderIcon,
-  HomeIcon,
-  InboxIcon,
-  UsersIcon,
-} from "@heroicons/react/24/outline";
-
-const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: InboxIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { routes } from "../../../routes";
+import { Link, NavLink } from "react-router-dom";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
+  const landingLinks = routes.find((navLink) => navLink.layout === "user");
+  const navLinks = landingLinks?.children?.length
+    ? landingLinks?.children?.filter((navLink) => navLink?.navbar === true)
+    : [];
+
   return (
     <>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -79,37 +65,34 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   </div>
                 </Transition.Child>
                 <div className="flex flex-shrink-0 items-center px-4">
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
+                  <Link to="/user/">
+                    <img
+                      className="h-8 w-auto"
+                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                      alt="Your Company"
+                    />
+                  </Link>
                 </div>
                 <div className="mt-5 h-0 flex-1 overflow-y-auto">
                   <nav className="space-y-1 px-2">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "group flex items-center px-2 py-2 text-base font-medium rounded-md"
-                        )}
-                      >
-                        <item.icon
-                          className={classNames(
-                            item.current
-                              ? "text-gray-300"
-                              : "text-gray-400 group-hover:text-gray-300",
-                            "mr-4 flex-shrink-0 h-6 w-6"
-                          )}
-                          aria-hidden="true"
-                        />
-                        {item.name}
-                      </a>
-                    ))}
+                    {navLinks?.length
+                      ? navLinks.map((navLink) => (
+                          <NavLink
+                            key={navLink.name}
+                            to={navLink?.path ?? "/user/"}
+                            className={(link) =>
+                              `group flex items-center px-2 py-2 text-base font-medium rounded-md ${
+                                link?.isActive
+                                  ? "bg-gray-900 text-white"
+                                  : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                              }`
+                            }
+                          >
+                            <navLink.icon className="mr-3 flex-shrink-0 h-6 w-6" />
+                            {navLink?.name}
+                          </NavLink>
+                        ))
+                      : ""}
                   </nav>
                 </div>
               </Dialog.Panel>
@@ -125,37 +108,34 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex min-h-0 flex-1 flex-col bg-gray-800">
           <div className="flex h-16 flex-shrink-0 items-center bg-gray-900 px-4">
-            <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company"
-            />
+            <Link to="/user/">
+              <img
+                className="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Your Company"
+              />
+            </Link>
           </div>
           <div className="flex flex-1 flex-col overflow-y-auto">
             <nav className="flex-1 space-y-1 px-2 py-4">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                  )}
-                >
-                  <item.icon
-                    className={classNames(
-                      item.current
-                        ? "text-gray-300"
-                        : "text-gray-400 group-hover:text-gray-300",
-                      "mr-3 flex-shrink-0 h-6 w-6"
-                    )}
-                    aria-hidden="true"
-                  />
-                  {item.name}
-                </a>
-              ))}
+              {navLinks?.length
+                ? navLinks.map((navLink) => (
+                    <NavLink
+                      key={navLink.name}
+                      to={navLink?.path ?? "/user/"}
+                      className={(link) =>
+                        `group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
+                          link?.isActive
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                        }`
+                      }
+                    >
+                      <navLink.icon className="mr-3 flex-shrink-0 h-6 w-6" />
+                      {navLink?.name}
+                    </NavLink>
+                  ))
+                : ""}
             </nav>
           </div>
         </div>

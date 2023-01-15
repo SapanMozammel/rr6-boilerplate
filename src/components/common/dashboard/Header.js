@@ -2,19 +2,21 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Bars3BottomLeftIcon, BellIcon } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import { Link } from "react-router-dom";
-
-const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "/" },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { Link, useNavigate } from "react-router-dom";
+import { routes } from "../../../routes";
 
 const Header = ({ setSidebarOpen }) => {
+  const landingLinks = routes.find((navLink) => navLink.layout === "user");
+  const navLinks = landingLinks?.children?.length
+    ? landingLinks?.children?.filter((navLink) => navLink?.profileNav === true)
+    : [];
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    return navigate("/");
+  };
+
   return (
     <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-gray-800 shadow">
       <button
@@ -76,21 +78,24 @@ const Header = ({ setSidebarOpen }) => {
               leaveTo="transform opacity-0 scale-95"
             >
               <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                {userNavigation.map((item) => (
-                  <Menu.Item key={item.name}>
-                    {({ active }) => (
+                {navLinks?.length &&
+                  navLinks?.map((navLink) => (
+                    <Menu.Item key={Math.random()}>
                       <Link
-                        to={item.href}
-                        className={classNames(
-                          active ? "bg-gray-100" : "",
-                          "block px-4 py-2 text-sm text-gray-700"
-                        )}
+                        key={Math.random()}
+                        to={navLink?.path ?? "/user/"}
+                        className="block px-4 py-2 text-sm text-gray-700"
                       >
-                        {item.name}
+                        {navLink?.name}
                       </Link>
-                    )}
-                  </Menu.Item>
-                ))}
+                    </Menu.Item>
+                  ))}
+                <button
+                  className="block px-4 py-2 text-sm text-gray-700"
+                  onClick={() => handleLogout()}
+                >
+                  Logout
+                </button>
               </Menu.Items>
             </Transition>
           </Menu>

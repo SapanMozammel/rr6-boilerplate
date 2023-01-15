@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "linkUrl": "https://www.app.easy.jobs/",
+    "title": "Easy.Jobs",
+    "subTitle": "The Best Remote Hiring SaaS for 2023!",
+    "imageUrl": "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg"
+  },
+  {
+    "id": 2,
+    "linkUrl": "https://www.templately.com/",
+    "title": "Templately",
+    "subTitle": "The Best Elementor Templates for WordPress & Cloud WorkSpace for 2023",
+    "imageUrl": "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+  },
+  {
+    "id": 3,
+    "linkUrl": "https://www.app.wpinsight.com/",
+    "title": "WPInsight",
+    "subTitle": "Track your plugins - WP Insight | Spread Knowledge and grow",
+    "imageUrl": "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg"
+  }
+]
