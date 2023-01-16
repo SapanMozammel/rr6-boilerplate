@@ -65,7 +65,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   </div>
                 </Transition.Child>
                 <div className="flex flex-shrink-0 items-center px-4">
-                  <Link to="/user/">
+                  <Link to="/user">
                     <img
                       className="h-8 w-auto"
                       src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
@@ -79,7 +79,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                       ? navLinks.map((navLink) => (
                           <NavLink
                             key={navLink.name}
-                            to={navLink?.path ?? "/user/"}
+                            to={navLink?.path ?? "/user"}
                             className={(link) =>
                               `group flex items-center px-2 py-2 text-base font-medium rounded-md ${
                                 link?.isActive
@@ -108,7 +108,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex min-h-0 flex-1 flex-col bg-gray-800">
           <div className="flex h-16 flex-shrink-0 items-center bg-gray-900 px-4">
-            <Link to="/user/">
+            <Link to="/user">
               <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
@@ -122,7 +122,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 ? navLinks.map((navLink) => (
                     <NavLink
                       key={navLink.name}
-                      to={navLink?.path ?? "/user/"}
+                      to={navLink?.path ?? "/user"}
                       className={(link) =>
                         `group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
                           link?.isActive

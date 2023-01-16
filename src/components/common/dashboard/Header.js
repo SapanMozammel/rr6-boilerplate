@@ -83,7 +83,7 @@ const Header = ({ setSidebarOpen }) => {
                     <Menu.Item key={Math.random()}>
                       <Link
                         key={Math.random()}
-                        to={navLink?.path ?? "/user/"}
+                        to={navLink?.path ?? "/user"}
                         className="block px-4 py-2 text-sm text-gray-700"
                       >
                         {navLink?.name}
