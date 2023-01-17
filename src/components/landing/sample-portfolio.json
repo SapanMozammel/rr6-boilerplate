@@ -4,20 +4,98 @@
     "linkUrl": "https://www.app.easy.jobs/",
     "title": "Easy.Jobs",
     "subTitle": "The Best Remote Hiring SaaS for 2023!",
-    "imageUrl": "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg"
+    "imageUrl": "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg",
+    "metrics": [
+      {
+        "id": 1,
+        "stat": "8K+",
+        "emphasis": "Companies",
+        "rest": "use laoreet amet lacus nibh integer quis."
+      },
+      {
+        "id": 2,
+        "stat": "25K+",
+        "emphasis": "Countries around the globe",
+        "rest": "lacus nibh integer quis."
+      },
+      {
+        "id": 3,
+        "stat": "98%",
+        "emphasis": "Customer satisfaction",
+        "rest": "laoreet amet lacus nibh integer quis."
+      },
+      {
+        "id": 4,
+        "stat": "12M+",
+        "emphasis": "Issues resolved",
+        "rest": "lacus nibh integer quis."
+      }
+    ]
   },
   {
     "id": 2,
     "linkUrl": "https://www.templately.com/",
     "title": "Templately",
     "subTitle": "The Best Elementor Templates for WordPress & Cloud WorkSpace for 2023",
-    "imageUrl": "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+    "imageUrl": "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg",
+    "metrics": [
+      {
+        "id": 1,
+        "stat": "8K+",
+        "emphasis": "Companies",
+        "rest": "use laoreet amet lacus nibh integer quis."
+      },
+      {
+        "id": 2,
+        "stat": "25K+",
+        "emphasis": "Countries around the globe",
+        "rest": "lacus nibh integer quis."
+      },
+      {
+        "id": 3,
+        "stat": "98%",
+        "emphasis": "Customer satisfaction",
+        "rest": "laoreet amet lacus nibh integer quis."
+      },
+      {
+        "id": 4,
+        "stat": "12M+",
+        "emphasis": "Issues resolved",
+        "rest": "lacus nibh integer quis."
+      }
+    ]
   },
   {
     "id": 3,
     "linkUrl": "https://www.app.wpinsight.com/",
     "title": "WPInsight",
     "subTitle": "Track your plugins - WP Insight | Spread Knowledge and grow",
-    "imageUrl": "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg"
+    "imageUrl": "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg",
+    "metrics": [
+      {
+        "id": 1,
+        "stat": "8K+",
+        "emphasis": "Companies",
+        "rest": "use laoreet amet lacus nibh integer quis."
+      },
+      {
+        "id": 2,
+        "stat": "25K+",
+        "emphasis": "Countries around the globe",
+        "rest": "lacus nibh integer quis."
+      },
+      {
+        "id": 3,
+        "stat": "98%",
+        "emphasis": "Customer satisfaction",
+        "rest": "laoreet amet lacus nibh integer quis."
+      },
+      {
+        "id": 4,
+        "stat": "12M+",
+        "emphasis": "Issues resolved",
+        "rest": "lacus nibh integer quis."
+      }
+    ]
   }
 ]

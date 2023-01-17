@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { routes } from "./routes";
+import NotFound from "./components/errors/NotFound";
 
 const nestedRoute = (route) => {
   return route?.children?.length
@@ -18,11 +19,18 @@ const nestedRoute = (route) => {
 };
 const router = createBrowserRouter(
   createRoutesFromElements(
-    routes?.map((layout) => (
-      <Route path={layout?.path} element={layout?.element}>
-        {nestedRoute(layout)}
-      </Route>
-    ))
+    <>
+      {routes?.map((layout) => (
+        <Route
+          key={Math.random()}
+          path={layout?.path}
+          element={layout?.element}
+          errorElement={<NotFound />}
+        >
+          {nestedRoute(layout)}
+        </Route>
+      ))}
+    </>
   )
 );
 
