@@ -71,7 +71,7 @@ export const routes = [
         element: <Portfolio />,
       },
       {
-        path: "portfolio/:id",
+        path: "portfolio/:slug",
         index: false,
         name: "Single Portfolio",
         element: <SinglePortfolio />,

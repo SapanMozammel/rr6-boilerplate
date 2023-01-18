@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "slug": "easy-jobs",
     "linkUrl": "https://www.app.easy.jobs/",
     "title": "Easy.Jobs",
     "subTitle": "The Best Remote Hiring SaaS for 2023!",
@@ -34,6 +35,7 @@
   },
   {
     "id": 2,
+    "slug": "templately",
     "linkUrl": "https://www.templately.com/",
     "title": "Templately",
     "subTitle": "The Best Elementor Templates for WordPress & Cloud WorkSpace for 2023",
@@ -67,6 +69,7 @@
   },
   {
     "id": 3,
+    "slug": "wp-insight",
     "linkUrl": "https://www.app.wpinsight.com/",
     "title": "WPInsight",
     "subTitle": "Track your plugins - WP Insight | Spread Knowledge and grow",

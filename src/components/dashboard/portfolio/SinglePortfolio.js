@@ -4,7 +4,7 @@ import samplePortfolio from "../sample-portfolio.json";
 
 const SinglePortfolio = () => {
   const [portfolioData, setPortfolioData] = useState([]);
-  const portfolioId = useParams()?.id;
+  const portfolioSlug = useParams()?.slug;
   const navigate = useNavigate();
   const [currentPortfolio, setCurrentPortfolio] = useState([]);
   useEffect(() => {
@@ -15,7 +15,7 @@ const SinglePortfolio = () => {
   useEffect(() => {
     if (portfolioData?.length) {
       setCurrentPortfolio(
-        portfolioData?.find((data) => data?.id == portfolioId)
+        portfolioData?.find((data) => data?.slug == portfolioSlug)
       );
     }
   }, [portfolioData]);

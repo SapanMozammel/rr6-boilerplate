@@ -26,7 +26,7 @@ const Portfolio = () => {
                     />
                   </div>
                   <h3 className="mt-3 text-base font-semibold text-gray-900">
-                    <Link to={`/portfolio/${data?.id}`}>
+                    <Link to={`/portfolio/${data?.slug}`}>
                       <span className="absolute inset-0"></span>
                       {data?.title}
                     </Link>
