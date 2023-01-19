@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { routes } from "../../../routes";
 
 const Header = () => {
-  const landingLinks = routes.find((navLink) => navLink.layout === "landing");
+  const landingLinks = routes.find((navLink) => navLink.layout === "main");
   const navLinks = landingLinks?.children?.length
     ? landingLinks?.children?.filter((navLink) => navLink?.navbar === true)
     : [];

@@ -1,10 +1,10 @@
-import Landing from "./components/layout/Landing";
-import Home from "./components/landing/home";
-import About from "./components/landing/about";
-import AboutMe from "./components/landing/about/AboutMe";
-import AboutCompany from "./components/landing/about/AboutCompany";
-import Portfolio from "./components/landing/portfolio";
-import SinglePortfolio from "./components/landing/portfolio/SinglePortfolio";
+import Main from "./components/layout/Main";
+import Home from "./components/main/home";
+import About from "./components/main/about";
+import AboutMe from "./components/main/about/AboutMe";
+import AboutCompany from "./components/main/about/AboutCompany";
+import Portfolio from "./components/main/portfolio";
+import SinglePortfolio from "./components/main/portfolio/SinglePortfolio";
 
 import Auth from "./components/layout/Auth";
 import Login from "./components/auth/Login";
@@ -31,9 +31,9 @@ import {
 
 export const routes = [
   {
-    layout: "landing",
+    layout: "main",
     path: "/",
-    element: <Landing />,
+    element: <Main  />,
     children: [
       {
         index: true,

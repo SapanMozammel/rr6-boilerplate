@@ -1,9 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Header from "../common/landing/Header";
-import Footer from "../common/landing/Footer";
+import Header from "../common/main/Header";
+import Footer from "../common/main/Footer";
 
-const Landing = () => {
+const Main = () => {
   return (
     <>
       <Header />
@@ -15,4 +15,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Main;
