@@ -8,16 +8,16 @@ const User = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-      <div className="flex flex-col md:pl-64 min-h-screen">
+      <div className="flex-1 flex flex-col md:pl-64">
         <Header setSidebarOpen={setSidebarOpen} />
-        <main className="flex-1 flex flex-col">
+        <main className="flex flex-col">
           <Outlet />
         </main>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 
